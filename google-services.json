@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "178807352580",
+    "project_id": "pushnotification-99d70",
+    "storage_bucket": "pushnotification-99d70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178807352580:android:ed0aa4e86c9934cda83451",
+        "android_client_info": {
+          "package_name": "ar.com.Lpereyra.Notificaciones"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178807352580-rb6theku3jmgdd22l3k10n2cppb25ca0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWG6Nw5g4I2SWNtPkEKNnita_Y6LmPiCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178807352580-rb6theku3jmgdd22l3k10n2cppb25ca0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
