@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotificacionApp.Views.Registro"
+             Title="Registro">
+    <VerticalStackLayout>
+        <Label 
+            Text="Registrarse"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry x:Name="Nombre" Placeholder="Nombre"/>
+        <Entry x:Name="Email" Placeholder="Email"/>
+        <Entry x:Name="Contraseña" Placeholder="Contraseña"/>
+       <!--Link para logearse en caso de poseer cuenta-->
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Ir a la página de Login">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToDetailPageCommand}" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Button x:Name="Registrarse"
+                Text="Registrarse"
+                Clicked="Registrarse_clicked">
+        </Button>
+
+
+    </VerticalStackLayout>
+</ContentPage>
