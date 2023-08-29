@@ -16,17 +16,17 @@ namespace NotificacionApp.Views;
 
 public partial class Registro : ContentPage
 {
-    public Command NavigateToDetailPageCommand { get; }
     public Registro()
 	{
 		InitializeComponent();
-        NavigateToDetailPageCommand = new Command(async () =>
-        {
-            await Shell.Current.GoToAsync("//Login");
-        });
-    }
+         
 
-	private async void Registrarse_clicked(object sender, EventArgs args) 
+    }
+    private async void OnLabelTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//Login");
+    }
+    private async void Registro_clicked(object sender, EventArgs args) 
 	{
         try
         {
@@ -36,11 +36,9 @@ public partial class Registro : ContentPage
 
             Usuarios usuario = new Usuarios
             {
-                Nombre = Nombre.Text.ToString(),
-                Email = Email.Text.ToString(),
+                NombreUsuario = Nombre.Text.ToString(),
+                CorreoElectronico = Email.Text.ToString(),
                 Contraseña = Contraseña.Text.ToString(),
-                Edad = 34,
-                TokenNotificacion = token.ToString()
             };
 
             await EnviarDatosPorPost(usuario);
@@ -49,6 +47,12 @@ public partial class Registro : ContentPage
         {
             await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
         }
+
+        Nombre.Text = "";
+        Email.Text = "";
+        Contraseña.Text = "";
+
+        
     }
 
     public async Task<bool> EnviarDatosPorPost(Usuarios usuario)
@@ -57,13 +61,13 @@ public partial class Registro : ContentPage
         { 
             var httpClient = new HttpClient();
             var content = new StringContent(JsonConvert.SerializeObject(usuario), Encoding.UTF8, "application/json");
-            var request = new HttpRequestMessage(HttpMethod.Post, "http://192.168.1.36:7186/api/Usuarios/Registro");
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://8136-186-128-188-105.ngrok-free.app/api/Usuarios/Registro");
             //se debe iniciar la api rest de la siguiente manera: dotnet watch run --urls "http://192.168.1.36:7186"
             request.Content = content;
 
             var response = await httpClient.SendAsync(request);
             response.EnsureSuccessStatusCode();
-
+            await Navigation.PushAsync(new Login());
             return true;
         }
         catch (System.Exception ex)

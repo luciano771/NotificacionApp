@@ -5,8 +5,25 @@
              Title="Login">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Login"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Entry x:Name="Nombre" Placeholder="Nombre"/>
+        <Entry x:Name="Email" Placeholder="Email"/>
+        <Entry x:Name="Contraseña" Placeholder="Contraseña"/>
+        <!--Link para logearse en caso de poseer cuenta-->
+        <Label></Label>
+        <Label></Label>
+        <Label Text="Ir a la página de Registro">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnLabelTapped" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label></Label>
+        <Label></Label>
+        <Button x:Name="Registrarse"
+                Text="Ingresar"
+                Clicked="Login_clicked">
+        </Button>
     </VerticalStackLayout>
 </ContentPage>

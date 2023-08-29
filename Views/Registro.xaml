@@ -12,20 +12,18 @@
         <Entry x:Name="Email" Placeholder="Email"/>
         <Entry x:Name="Contraseña" Placeholder="Contraseña"/>
        <!--Link para logearse en caso de poseer cuenta-->
-        <Label>
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="Ir a la página de Login">
-                        <Span.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToDetailPageCommand}" />
-                        </Span.GestureRecognizers>
-                    </Span>
-                </FormattedString>
-            </Label.FormattedText>
+        <Label></Label>
+        <Label></Label>
+        <Label Text="Ir a la página de Login">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnLabelTapped" />
+            </Label.GestureRecognizers>
         </Label>
+        <Label></Label>
+        <Label></Label>
         <Button x:Name="Registrarse"
                 Text="Registrarse"
-                Clicked="Registrarse_clicked">
+                Clicked="Registro_clicked">
         </Button>
 
 
