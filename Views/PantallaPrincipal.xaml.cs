@@ -52,7 +52,7 @@ public partial class PantallaPrincipal : ContentPage
         var tapGestureRecognizer = new TapGestureRecognizer();
         tapGestureRecognizer.Tapped += async (s, e) =>
         {
-            await DisplayAlert("Note Tapped", $"You tapped on Note {noteCounter}", "OK");
+            await DisplayAlert(TituloNote, newNoteText, "OK");
         };
 
         noteFrame.GestureRecognizers.Add(tapGestureRecognizer);
