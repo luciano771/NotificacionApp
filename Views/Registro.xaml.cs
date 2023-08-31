@@ -61,7 +61,7 @@ public partial class Registro : ContentPage
         { 
             var httpClient = new HttpClient();
             var content = new StringContent(JsonConvert.SerializeObject(usuario), Encoding.UTF8, "application/json");
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://8136-186-128-188-105.ngrok-free.app/api/Usuarios/Registro");
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://6279-186-128-168-6.ngrok-free.app/api/Usuarios/Registro");
             //se debe iniciar la api rest de la siguiente manera: dotnet watch run --urls "http://192.168.1.36:7186"
             request.Content = content;
 

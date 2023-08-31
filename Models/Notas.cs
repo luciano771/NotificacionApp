@@ -12,8 +12,10 @@ namespace NotificacionApp.Models
     public class Notas
     {
         
+        //public int? NotaId { get; set; } 
         public int UsuarioId { get; set; }
          
+        public int? NroNota { get; set; }
       
         public string Titulo { get; set; }
        

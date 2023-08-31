@@ -4,29 +4,51 @@
              x:Class="NotificacionApp.Views.PantallaPrincipal"
              xmlns:local="clr-namespace:NotificacionApp.Views"
              Title="PantallaPrincipal">
+    <ContentPage.Background>
+        <Color>#f2f4ff</Color>
+    </ContentPage.Background>
+
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="NoteStyle" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="#F9F9F9" />
+                <Setter Property="BackgroundColor" Value="#b6befa" />
                 <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="Margin" Value="10" />
+                <Setter Property="Margin" Value="5" />
                 <Setter Property="Padding" Value="10" />
-                <Setter Property="WidthRequest" Value="100"/>
-                <Setter Property="WidthRequest" Value="100"/>
+                <Setter Property="WidthRequest" Value="180"/>
+                <Setter Property="HeightRequest" Value="150"/>
+            </Style>
+            <Style x:Key="ButtonStyleAgregarNota" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#c3c9fa" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout>
-        <Button Text="Añadir nota" Clicked="CreateDivButton_Clicked" />
-        <ScrollView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <!-- Fila para el botón -->
+            <RowDefinition Height="auto" />
+            <!-- Fila para el ScrollView -->
+        </Grid.RowDefinitions>
+
+        <Button Text="Añadir nota" Clicked="CreateDivButton_Clicked"   Style="{StaticResource ButtonStyleAgregarNota}" />
+
+        <ScrollView Grid.Row="1">
             <FlexLayout x:Name="DivsFlexLayout"
                         Direction="Row"
                         Wrap="Wrap"
                         JustifyContent="Start"
                         AlignItems="Start">
+                
             </FlexLayout>
         </ScrollView>
-    </StackLayout>
+    </Grid>
+    
+    
 </ContentPage>
 
